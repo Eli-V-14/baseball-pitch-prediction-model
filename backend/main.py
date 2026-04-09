@@ -18,14 +18,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Uncomment when model is trained and saved
 # model = joblib.load('pitch_prediction_model.pkl')
 
 # Serve static files (your HTML/CSS/JS)
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# app.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.get("/")
-def serve_frontend():
-    return FileResponse('static/index.html')
+# @app.get("/")
+# def serve_frontend():
+#     return FileResponse('static/index.html')
 
 class PitchData(BaseModel):
     balls: int
@@ -55,4 +56,4 @@ def predict_pitch(pitch_data: PitchData):
     return {"predicted_pitch_type": "fastball"}
 
 if __name__ == "__main__":  
-    uvicorn.run("main:app", host="localhost", port=8000, reload=True)   
+    uvicorn.run(app, host="localhost", port=3000)   
