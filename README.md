@@ -17,3 +17,9 @@ Baseball is a strategical game and pitch selection is one of the most critical d
 - MongoDB for VS Code
 - ES7 + React/Redux/React-Native snippets
 - Prettier
+
+# Terminal 1
+- **cd backend** --> **python main.py**
+
+# Terminal 2
+- **cd frontend** --> **npm start**
