@@ -19,7 +19,7 @@ Baseball is a strategical game and pitch selection is one of the most critical d
 - Prettier
 
 # Terminal 1
-- **cd backend** --> **python main.py**
+- **cd backend** --> **uvicorn main:app --reload --port 8000**
 
 # Terminal 2
 - **cd frontend** --> **npm start**
