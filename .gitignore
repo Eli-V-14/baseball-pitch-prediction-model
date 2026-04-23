@@ -1,3 +1,11 @@
+#.env
+.env
+
+#.vscode
+.vscode/
+
+#.tfevents
+*.tfevents*
 # Logs
 logs
 *.log
