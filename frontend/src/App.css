@@ -206,3 +206,18 @@ body { font-family: sans-serif; background: #f0f2f5; }
 /* Loading / error states */
 .table-state { padding: 3rem; text-align: center; color: #888; font-size: 14px; }
 .table-error { color: #c0392b; }
+
+/* Three model result cards */
+.right-panel { flex-direction: column; justify-content: center; gap: 16px; }
+.result-card { width: 100%; max-width: 340px; }
+.result-model-name {
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; color: #185FA5; margin-bottom: 6px;
+}
+.result-alts {
+  display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; justify-content: center;
+}
+.alt-badge {
+  display: inline-block; padding: 2px 9px;
+  border-radius: 12px; font-size: 11px; font-weight: 500;
+}
