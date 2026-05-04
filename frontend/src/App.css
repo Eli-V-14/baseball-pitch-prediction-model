@@ -328,3 +328,63 @@ body { font-family: sans-serif; background: #f0f2f5; }
 .null-val { color: #ccc; font-style: italic; }
 .table-state { padding: 3rem; text-align: center; color: #888; font-size: 14px; }
 .table-error { color: #c0392b; }
+
+/* ── About Page ── */
+.about-page {
+  padding: 32px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #333;
+  overflow-y: auto;
+  height: 680px;
+}
+.about-page h2 {
+  font-size: 24px;
+  color: #111;
+  margin-bottom: 12px;
+}
+.about-intro {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 800px;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.about-section {
+  background: #f8f9fb;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+}
+.about-section h3 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #185FA5;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e0e6ed;
+  padding-bottom: 8px;
+}
+.about-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.about-section li {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #444;
+}
+.about-section li strong {
+  color: #111;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
+}

@@ -750,11 +750,82 @@ export default function App() {
   return (
     <div className="app">
       <nav className="tab-bar">
-        {["Prediction", "Data table"].map((t) => (
+        {["Prediction", "Data table", "About"].map((t) => (
           <button key={t} className={`tab ${tab === t ? "active" : ""}`} onClick={() => setTab(t)}>{t}</button>
         ))}
       </nav>
-      <main>{tab === "Prediction" ? <PredictionPage /> : <DataTable />}</main>
+      <main>
+        {tab === "Prediction" ? <PredictionPage /> : tab === "Data table" ? <DataTable /> : <AboutPage />}
+      </main>
     </div>
   );
 }
+
+// ── About Page ─────────────────────────────────────────────────────────────────
+function AboutPage() {
+  return (
+    <div className="about-page">
+      <h2>About the Pitch Prediction Features</h2>
+      <p className="about-intro">This guide explains the different inputs used to predict pitch types. These metrics are commonly used in baseball analytics (such as Statcast) to quantify the characteristics of a pitch and the game situation.</p>
+
+      <div className="about-grid">
+        <section className="about-section">
+          <h3>Physics</h3>
+          <ul>
+            <li><strong>Release speed (mph):</strong> The speed of the pitch when it is released from the pitcher's hand.</li>
+            <li><strong>Spin rate (rpm):</strong> The rate of spin on the baseball after it is released, measured in revolutions per minute.</li>
+            <li><strong>Spin axis (deg):</strong> The axis of rotation of the baseball in two dimensions (0-360), indicating the direction of spin.</li>
+          </ul>
+        </section>
+
+        <section className="about-section">
+          <h3>Movement</h3>
+          <ul>
+            <li><strong>pfx_x (in):</strong> The horizontal movement of the pitch, in inches, compared to a pitch thrown without spin.</li>
+            <li><strong>pfx_z (in):</strong> The vertical movement of the pitch, in inches, compared to a pitch thrown without spin. (Includes gravity)</li>
+            <li><strong>vx0, vy0, vz0:</strong> The velocity of the pitch in the x, y, and z dimensions, respectively, measured at 50 feet from home plate. (x = horizontal, y = distance from home, z = vertical)</li>
+            <li><strong>ax, ay, az:</strong> The acceleration of the pitch in the x, y, and z dimensions, respectively.</li>
+          </ul>
+        </section>
+
+        <section className="about-section">
+          <h3>Release</h3>
+          <ul>
+            <li><strong>pos_x (ft):</strong> The horizontal release position of the pitch.</li>
+            <li><strong>pos_y (ft):</strong> The distance from home plate where the pitch is released.</li>
+            <li><strong>pos_z (ft):</strong> The vertical release position of the pitch.</li>
+            <li><strong>Extension (ft):</strong> How far off the pitching rubber the pitcher releases the ball.</li>
+          </ul>
+        </section>
+
+        <section className="about-section">
+          <h3>Count & Bases</h3>
+          <ul>
+            <li><strong>Balls:</strong> The number of balls in the current count (0-3).</li>
+            <li><strong>Strikes:</strong> The number of strikes in the current count (0-2).</li>
+            <li><strong>Runner on 1B / 2B / 3B:</strong> Indicates whether there is a baserunner on first, second, or third base.</li>
+          </ul>
+        </section>
+
+        <section className="about-section">
+          <h3>Game State</h3>
+          <ul>
+            <li><strong>Outs:</strong> The number of outs in the current inning (0-2).</li>
+            <li><strong>Inning:</strong> The current inning of the game (1-9+).</li>
+            <li><strong>Top / Bottom:</strong> Whether it is the top (away team batting) or bottom (home team batting) half of the inning.</li>
+            <li><strong>Score differential:</strong> The difference in score from the home team's perspective. Positive means the home team is winning.</li>
+            <li><strong>Times through order:</strong> How many times the pitcher has faced the current batter's spot in the batting order during the game.</li>
+          </ul>
+        </section>
+
+        <section className="about-section">
+          <h3>Player</h3>
+          <ul>
+            <li><strong>Pitcher hand:</strong> The throwing hand of the pitcher (R = Right, L = Left).</li>
+            <li><strong>Batter stance:</strong> The batting stance of the hitter (R = Right, L = Left, S = Switch).</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  );
+}

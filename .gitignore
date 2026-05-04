@@ -140,3 +140,10 @@ vite.config.ts.timestamp-*
 
 # Model and Features
 backend/backend
+
+# Venv changes
+*venv*
+
+# pycache
+*__pycache__*
+*.pyc

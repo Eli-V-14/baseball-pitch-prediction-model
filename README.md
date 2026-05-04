@@ -12,14 +12,40 @@ Baseball is a strategical game and pitch selection is one of the most critical d
 - fastapi : for building the API server
 - pydantic : for defining data models and validation
 - uvicorn : for running the FastAPI server
+- python-dotenv : for environment variables
+- scikit-learn : for the Random Forest model and label encoding
+- catboost : for the CatBoost model
+- xgboost : for the XGBoost model
 
 # Extensions
 - MongoDB for VS Code
 - ES7 + React/Redux/React-Native snippets
 - Prettier
 
-# Terminal 1
-- **cd backend** --> **uvicorn main:app --reload --port 8000**
+# Setup Backend (Virtual Environment)
+It is highly recommended to use a virtual environment for the backend. Run these commands from the root of the project (`baseball-pitch-prediction-model`):
+
+1. **Create the virtual environment:**
+   ```powershell
+   python -m venv venv
+   ```
+
+2. **Activate the virtual environment:**
+   ```powershell
+   .\venv\Scripts\activate
+   ```
+
+3. **Install the dependencies:**
+   ```powershell
+   pip install fastapi uvicorn pymongo pandas joblib python-dotenv scikit-learn catboost xgboost
+   ```
+
+# Terminal 1 (Backend)
+Once the virtual environment is set up and activated, run the following:
+```powershell
+cd backend
+python -m uvicorn main:app --reload --port 8000
+```
 
 # Terminal 2
 - **cd frontend** --> **npm start**
